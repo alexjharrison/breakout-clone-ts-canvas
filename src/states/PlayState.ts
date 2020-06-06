@@ -14,17 +14,19 @@ export class PlayState extends BaseState {
     console.log("play state started");
   }
   update(dt: number) {
-    this.paddle.update(dt)
+    this.paddle.update(dt);
+    this.ball.update(dt);
+
+    if (this.ball.hasCollidedWith(this.paddle)) this.ball.reverseY();
   }
 
   render() {
-    clear()
-    this.paddle.render()
-    this.ball.render()
+    clear();
+    this.paddle.render();
+    this.ball.render();
   }
 
   end() {
     console.log("play state ended");
   }
-
 }
