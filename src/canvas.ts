@@ -10,10 +10,10 @@ const canvas = getCanvasById();
 canvas.width = 800;
 canvas.height = 400;
 
-const ctx = canvas.getContext("2d");
+const ctx = <CanvasRenderingContext2D>canvas.getContext("2d");
 
 const clear = () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-}
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
 
 export { canvas, ctx, clear };
