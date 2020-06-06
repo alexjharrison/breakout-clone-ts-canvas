@@ -2,7 +2,10 @@ import { PlayState } from "./PlayState";
 import { StartState } from "./StartState";
 import { BaseState } from "./BaseState";
 
-const states = ["playState", "startState"];
+export enum States {
+  playState = "playState",
+  startState = "startState",
+}
 
 export class StateMachine {
   constructor(
@@ -18,9 +21,7 @@ export class StateMachine {
     this.currentState.render();
   }
 
-  changeTo(newState: string): void {
-    if (states.indexOf(newState) < 0) throw new Error("Not a valid State");
-
+  changeTo(newState: States): void {
     this.currentState.end();
     this.currentState = this[newState];
     this.currentState.start();
