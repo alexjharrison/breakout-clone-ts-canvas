@@ -19,4 +19,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./PlayState":"fmyL","./StartState":"H4IQ"}],"B6dB":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.gameState=void 0;var e=require("./canvas"),t=require("./etc/keysPressed"),r=require("./states/StateMachine");t.initKeyListener(),exports.gameState=new r.StateMachine,e.ctx.fillStyle="coral";var a=0,i=function e(t){var r=t-a;a=t,exports.gameState.run(r),window.requestAnimationFrame(e)};window.requestAnimationFrame(i);
 },{"./canvas":"qKVu","./etc/keysPressed":"lOHw","./states/StateMachine":"Nyoa"}]},{},["B6dB"], null)
-//# sourceMappingURL=/src.478f22cf.js.map
+//# sourceMappingURL=%27/breakout-clone-ts-canvas%27/src.478f22cf.js.map

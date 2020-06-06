@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,GACE,iBACF,CACA,OACE,qBAAsB,CACtB,aAAc,CACd,WACF","file":"style.084424fb.css","sourceRoot":"..","sourcesContent":["h1 {\r\n  text-align: center;\r\n}\r\ncanvas {\r\n  background-color: #eee;\r\n  display: block;\r\n  margin: auto;\r\n}\r\n"]}
