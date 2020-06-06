@@ -1,11 +1,8 @@
 export class BaseState {
-  constructor() {}
+  constructor() { }
 
-  start() {}
-  change(): string {
-    return null;
-  }
-  update(dt: number) {}
-  render() {}
-  end() {}
+  start() { }
+  update(dt: number) { }
+  render() { }
+  end() { }
 }

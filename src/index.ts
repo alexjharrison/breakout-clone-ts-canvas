@@ -4,12 +4,15 @@ import { StateMachine } from "./states/StateMachine";
 
 initKeyListener();
 
-const stateMachine = new StateMachine();
+export const gameState = new StateMachine();
 
-let ticks = 0;
 ctx.fillStyle = "coral";
+let prevTimestamp: number = 0
 const tick = (timestamp: number) => {
-  stateMachine.run(ticks++);
+  const dt = timestamp - prevTimestamp
+  prevTimestamp = timestamp
+
+  gameState.run(dt);
   window.requestAnimationFrame(tick);
 };
 

@@ -16,8 +16,6 @@ export class StateMachine {
   run(dt: number): void {
     this.currentState.update(dt);
     this.currentState.render();
-    const newState = this.currentState.change();
-    if (newState) this.changeTo(newState);
   }
 
   changeTo(newState: string): void {

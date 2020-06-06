@@ -12,4 +12,8 @@ canvas.height = 400;
 
 const ctx = canvas.getContext("2d");
 
-export { canvas, ctx };
+const clear = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
+
+export { canvas, ctx, clear };
