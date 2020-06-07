@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.2.0",
-    "parcel-bundler": "^1.12.4",
-    "typescript": "^3.9.3"
+    "concurrently": "5.2.0",
+    "parcel-bundler": "1.12.4",
+    "typescript": "3.9.3"
   },
   "dependencies": {
     "src": "^1.1.2"
