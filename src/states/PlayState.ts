@@ -4,13 +4,11 @@ import { clear } from "../canvas";
 import { Ball } from "../lib/Ball";
 import { BrickColumn } from "../lib/BrickColumn";
 export class PlayState extends BaseState {
-  
-  private brickColumns: BrickColumn[] = []
+  private brickColumns: BrickColumn[] = [];
 
   constructor(
     private paddle = new Paddle(),
     private ball = new Ball(),
-    ,
     private score = 0
   ) {
     super();
@@ -24,22 +22,24 @@ export class PlayState extends BaseState {
   update(dt: number) {
     this.paddle.update(dt);
     this.ball.update(dt);
-    this.brickColumns.forEach(brickColumn=>brickColumn.update(dt))
+    this.brickColumns.forEach((brickColumn) => brickColumn.update(dt));
 
     if (this.ball.hasCollidedWith(this.paddle)) this.ball.reverseY();
-    this.brickColumns.map(col=>col.bricks.map(brick=>{
-      if(this.ball.hasCollidedWith(brick) && !brick.wasHit) {
-        this.ball.reverseY()
-        brick.wasHit = true
-      }
-    }))
+    this.brickColumns.map((col) =>
+      col.bricks.map((brick) => {
+        if (this.ball.hasCollidedWith(brick) && !brick.wasHit) {
+          this.ball.reverseY();
+          brick.wasHit = true;
+        }
+      })
+    );
   }
 
   render() {
     clear();
     this.paddle.render();
     this.ball.render();
-    this.brickColumns.forEach(brickColumn=>brickColumn.render())
+    this.brickColumns.forEach((brickColumn) => brickColumn.render());
   }
 
   end() {
